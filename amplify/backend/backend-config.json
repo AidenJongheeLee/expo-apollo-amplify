@@ -1,0 +1,35 @@
+{
+	"api": {
+		"amplifyBlogAPI": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [
+						{
+							"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+							"userPoolConfig": {
+								"userPoolId": "authexpoamplify5038bf8c"
+							}
+						}
+					],
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "",
+							"apiKeyExpirationDays": 7
+						}
+					}
+				}
+			}
+		}
+	},
+	"auth": {
+		"expoamplify5038bf8c": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
